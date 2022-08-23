@@ -1,3 +1,12 @@
+@import url("https://use.typekit.net/ics5byy.css");
+
+body {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  --font-main: lato, sans-serif;
+}
+
 *,
 *::before,
 *::after {
@@ -15,6 +24,21 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 1rem;
+  width: 35rem;
+  height: 100vh;
 }
 
 /* 16px @ 768px increasing to 24px @ 1920px */

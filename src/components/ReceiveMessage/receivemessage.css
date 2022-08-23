@@ -1,0 +1,8 @@
+.msg-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #2b2a33;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
