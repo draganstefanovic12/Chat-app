@@ -2,10 +2,10 @@ import { Button } from "../Button/Button";
 import { useState } from "react";
 import { changeRoom } from "../../redux/socketReducer";
 import { InputField } from "../InputField/InputField";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../hooks/useRedux";
 
 export const Rooms = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [room, setRoom] = useState("");
 
   const handleRoom = () => {

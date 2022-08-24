@@ -1,6 +1,6 @@
+import { Rooms } from "../components/Rooms/Rooms";
 import { SendMessage } from "../components/SendMessage/SendMessage";
 import { ReceiveMessage } from "../components/ReceiveMessage/ReceiveMessage";
-import { Rooms } from "../components/Rooms/Rooms";
 
 export const MainPage = () => {
   return (

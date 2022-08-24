@@ -7,10 +7,10 @@ import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../hooks/useRedux";
 
 export const SendMessage = () => {
+  const dispatch = useDispatch();
   const [message, setMessage] = useState<string>("");
   const user = useAppSelector((user) => user.user.username);
   const room = useAppSelector((socket) => socket.socket.currentRoom);
-  const dispatch = useDispatch();
 
   const sendMessage = () => {
     dispatch(send({ message: message, user: user, room: room }));

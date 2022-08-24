@@ -8,7 +8,7 @@ type Message = {
 };
 
 export const ReceiveMessage = () => {
-  const [received, setReceived] = useState<any>([]);
+  const [received, setReceived] = useState<Message[]>([]);
   const socket = useAppSelector((socket) => socket.socket.socketIo);
 
   useEffect(() => {
