@@ -5,12 +5,13 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { useUser } from "./context/UserContext";
 import { MainPage } from "./pages/MainPage";
 import { Login } from "./pages/Login";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 
 const App = () => {
-  const { user } = useUser();
+  const user = useSelector((user: RootState) => user.user.username);
 
   return (
     <Router>

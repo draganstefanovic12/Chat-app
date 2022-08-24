@@ -1,16 +1,19 @@
 import "./sendmessage.css";
+import { send } from "../../redux/socketReducer";
 import { Button } from "../Button/Button";
-import { useUser } from "../../context/UserContext";
 import { useState } from "react";
-import { SocketIo } from "../../types";
 import { InputField } from "../InputField/InputField";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "../../hooks/useRedux";
 
-export const SendMessage = ({ socket }: SocketIo) => {
-  const { user } = useUser();
-  const [message, setMessage] = useState<string>();
+export const SendMessage = () => {
+  const [message, setMessage] = useState<string>("");
+  const user = useAppSelector((user) => user.user.username);
+  const room = useAppSelector((socket) => socket.socket.currentRoom);
+  const dispatch = useDispatch();
 
   const sendMessage = () => {
-    socket.emit("send_message", { message: message, user: user });
+    dispatch(send({ message: message, user: user, room: room }));
     setMessage("");
   };
 

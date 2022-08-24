@@ -1,13 +1,13 @@
-import { io } from "socket.io-client";
 import { SendMessage } from "../components/SendMessage/SendMessage";
 import { ReceiveMessage } from "../components/ReceiveMessage/ReceiveMessage";
+import { Rooms } from "../components/Rooms/Rooms";
 
 export const MainPage = () => {
-  const socket = io("http://localhost:3000");
   return (
     <div className="main-wrapper">
+      <Rooms />
       <ReceiveMessage />
-      <SendMessage socket={socket} />
+      <SendMessage />
     </div>
   );
 };

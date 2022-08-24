@@ -1,5 +1,5 @@
 import "./receivemessage.css";
-import { io } from "socket.io-client";
+import { useAppSelector } from "../../hooks/useRedux";
 import { useEffect, useState } from "react";
 
 type Message = {
@@ -8,11 +8,10 @@ type Message = {
 };
 
 export const ReceiveMessage = () => {
-  const socket = io("http://localhost:3000");
-  const [received, setReceived] = useState<any>();
+  const [received, setReceived] = useState<any>([]);
+  const socket = useAppSelector((socket) => socket.socket.socketIo);
 
   useEffect(() => {
-    console.log("hello");
     socket.on("receive_message", (data) => {
       received ? setReceived([...received, data]) : setReceived([data]);
     });
