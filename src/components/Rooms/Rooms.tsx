@@ -1,25 +1,24 @@
+import "./rooms.css";
 import { Button } from "../Button/Button";
-import { useState } from "react";
+import { chatrooms } from "../../assets/chatrooms";
 import { changeRoom } from "../../redux/socketReducer";
-import { InputField } from "../InputField/InputField";
 import { useAppDispatch } from "../../hooks/useRedux";
+
+export type ChatRoom = {
+  name: string;
+};
 
 export const Rooms = () => {
   const dispatch = useAppDispatch();
-  const [room, setRoom] = useState("");
-
-  const handleRoom = () => {
-    dispatch(changeRoom(room));
-  };
-
-  const handleSwitchRooms = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setRoom(e.target.value);
-  };
 
   return (
-    <div>
-      <InputField placeholder="Room..." onChange={handleSwitchRooms} />
-      <Button onClick={handleRoom}>Switch Room</Button>
+    <div className="rooms-wrapper">
+      {chatrooms &&
+        chatrooms.map((chatroom: ChatRoom, i: number) => (
+          <Button key={i} onClick={() => dispatch(changeRoom(chatroom.name))}>
+            {chatroom.name}
+          </Button>
+        ))}
     </div>
   );
 };

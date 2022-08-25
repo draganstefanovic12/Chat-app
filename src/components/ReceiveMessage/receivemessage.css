@@ -1,8 +1,7 @@
-.msg-wrapper {
+.msg-receive-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: #2b2a33;
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  color: #000000;
   border-radius: 0.5rem;
 }

@@ -1,18 +1,18 @@
 import { login } from "../redux/userReducer";
 import { Button } from "../components/Button/Button";
 import { InputField } from "../components/InputField/InputField";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../hooks/useRedux";
 import { useEffect, useState } from "react";
 
 export const Login = () => {
   const [username, setUsername] = useState<string | null>();
   const [error, setError] = useState<boolean>(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("ChatUser")!);
     user && dispatch(login(user.user));
-  }, []);
+  }, [dispatch]);
 
   const handleUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);

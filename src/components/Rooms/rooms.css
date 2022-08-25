@@ -1,0 +1,11 @@
+.rooms-wrapper {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  width: 5rem;
+  font-size: 12px;
+}
+
+.rooms-wrapper > button {
+  padding: 0.3rem;
+}

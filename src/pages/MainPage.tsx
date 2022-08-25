@@ -5,9 +5,13 @@ import { ReceiveMessage } from "../components/ReceiveMessage/ReceiveMessage";
 export const MainPage = () => {
   return (
     <div className="main-wrapper">
-      <Rooms />
-      <ReceiveMessage />
-      <SendMessage />
+      <div className="rooms-wrapper">
+        <Rooms />
+      </div>
+      <div className="msg-wrapper">
+        <ReceiveMessage />
+        <SendMessage />
+      </div>
     </div>
   );
 };

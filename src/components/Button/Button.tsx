@@ -1,3 +1,5 @@
+import "./button.css";
+
 type ButtonProps = {
   children: string;
   onClick?: () => void;

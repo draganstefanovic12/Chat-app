@@ -1,31 +1,35 @@
 import "./receivemessage.css";
+import { Message } from "../../types";
 import { useAppSelector } from "../../hooks/useRedux";
-import { useEffect, useState } from "react";
-
-type Message = {
-  user: string;
-  message: string;
-};
+import { useEffect, useRef, useState } from "react";
+import { SendMessage } from "../SendMessage/SendMessage";
 
 export const ReceiveMessage = () => {
-  const [received, setReceived] = useState<Message[]>([]);
+  const [currMsg, setCurrMsg] = useState<Message[]>([]);
   const socket = useAppSelector((socket) => socket.socket.socketIo);
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
-      received ? setReceived([...received, data]) : setReceived([data]);
+    //Fetching room content on room change
+    socket.on("changed_room", (data) => {
+      setCurrMsg(data.content);
     });
-  }, [received, socket]);
+
+    socket.on("receive_message", (data: Message) => {
+      setCurrMsg([...currMsg, data]);
+      divRef.current!.scrollIntoView({ behavior: "smooth" });
+    });
+  }, [currMsg, socket]);
+
+  const divRef = useRef<HTMLDivElement>(null);
 
   return (
-    <>
-      {received &&
-        received.map((message: Message) => (
-          <div className="msg-wrapper">
-            <p>{message.user}</p>
-            <p>{message.message}</p>
-          </div>
-        ))}
-    </>
+    <div>
+      {currMsg.map((message: Message, i: number) => (
+        <div ref={divRef} key={i} className="msg-receive-wrapper">
+          <p>{message.user}</p>
+          <p>{message.message}</p>
+        </div>
+      ))}
+    </div>
   );
 };

@@ -3,15 +3,9 @@ import { io, Socket } from "socket.io-client";
 import { DefaultEventsMap } from "socket.io/dist/typed-events";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Message = {
-  message: string | undefined;
-  user: string | null;
-  room: string | null;
-};
-
 type RoomSocket = {
   socketIo: Socket<DefaultEventsMap, DefaultEventsMap>;
-  currentRoom: null | string;
+  currentRoom: string;
 };
 
 const socketIo = io("http://localhost:3000");
@@ -22,20 +16,15 @@ export const socketSlice = createSlice({
   initialState,
   reducers: {
     changeRoom: (state, action: PayloadAction<string>) => {
-      socketIo.emit("join_room", action.payload);
-      state.currentRoom = action.payload;
-    },
-    send: (state, action: PayloadAction<Message>) => {
-      socketIo.emit("send_message", {
-        message: action.payload.message,
-        user: action.payload.user,
-        room: action.payload.room,
-      });
+      if (state.currentRoom !== action.payload) {
+        socketIo.emit("change_room", action.payload);
+        state.currentRoom = action.payload;
+      }
     },
   },
 });
 
-export const { changeRoom, send } = socketSlice.actions;
+export const { changeRoom } = socketSlice.actions;
 export const socketState = (state: RootState) => state.socket;
 
 export default socketSlice.reducer;

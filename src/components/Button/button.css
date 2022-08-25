@@ -1,0 +1,15 @@
+button {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  outline: 1px solid #000000;
+  background: #c0c0c0;
+  color: #000000;
+  border: 1px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  cursor: pointer;
+}
+
+button:active {
+  height: 90%;
+}
