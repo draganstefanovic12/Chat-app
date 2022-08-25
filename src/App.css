@@ -36,8 +36,9 @@ a {
 .main-wrapper {
   display: flex;
   align-items: flex-end;
+  position: relative;
   background-color: #a0a0a4;
-  width: 35rem;
+  width: 50vh;
   height: 50vh;
   overflow: auto;
 }

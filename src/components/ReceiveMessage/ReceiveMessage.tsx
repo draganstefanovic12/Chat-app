@@ -2,7 +2,6 @@ import "./receivemessage.css";
 import { Message } from "../../types";
 import { useAppSelector } from "../../hooks/useRedux";
 import { useEffect, useRef, useState } from "react";
-import { SendMessage } from "../SendMessage/SendMessage";
 
 export const ReceiveMessage = () => {
   const [currMsg, setCurrMsg] = useState<Message[]>([]);
@@ -16,16 +15,17 @@ export const ReceiveMessage = () => {
 
     socket.on("receive_message", (data: Message) => {
       setCurrMsg([...currMsg, data]);
-      divRef.current!.scrollIntoView({ behavior: "smooth" });
     });
+
+    divRef.current?.scrollIntoView();
   }, [currMsg, socket]);
 
-  const divRef = useRef<HTMLDivElement>(null);
+  const divRef = useRef<HTMLParagraphElement>(null);
 
   return (
-    <div>
+    <div className="msg-receive-wrapper">
       {currMsg.map((message: Message, i: number) => (
-        <div ref={divRef} key={i} className="msg-receive-wrapper">
+        <div ref={divRef} key={i} className="msg-receive">
           <p>{message.user}</p>
           <p>{message.message}</p>
         </div>

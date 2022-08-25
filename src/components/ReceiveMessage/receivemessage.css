@@ -1,4 +1,8 @@
 .msg-receive-wrapper {
+  padding-bottom: 3rem;
+}
+
+.msg-receive {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;

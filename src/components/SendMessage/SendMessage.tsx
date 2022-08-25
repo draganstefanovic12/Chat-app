@@ -40,7 +40,6 @@ export const SendMessage = () => {
       <Button type="submit" onClick={sendMessage}>
         Send
       </Button>
-      <div></div>
     </div>
   );
 };

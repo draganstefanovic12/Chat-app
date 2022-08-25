@@ -1,6 +1,6 @@
 input {
   height: 2.4rem;
-  width: 100%;
+  width: inherit;
   padding: 1rem;
   color: #000000;
   background-color: #fcfcfc;
