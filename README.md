@@ -1,3 +1,7 @@
 # Chat App
 
-Small chat app I'm creating using React/TypeScript/NodeJS and socket.io.
+Small windows 95 themed chat app I'm creating in React/TypeScript.
+
+I'm using NodeJS/Express/MongoDB for my backend and socket.io API to make it work.
+
+
