@@ -1,0 +1,29 @@
+.footer-taskbar {
+  position: fixed;
+  bottom: 0;
+  height: 1.5rem;
+  background-color: #a0a0a4;
+  width: 100%;
+  border: 0.1rem solid;
+  padding: 0rem 0.2rem;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  border-left: none;
+}
+
+.start-wrapper {
+  display: flex;
+  width: 2.8rem;
+  align-items: end;
+}
+
+.start-wrapper > * {
+  font-weight: 700;
+}
+
+.start-wrapper > p {
+  height: 0.9rem;
+}
+
+.win-logo {
+  height: 1rem;
+}

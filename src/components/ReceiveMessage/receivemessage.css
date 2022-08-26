@@ -1,11 +1,13 @@
-.msg-receive-wrapper {
-  padding-bottom: 3rem;
-}
-
 .msg-receive {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   color: #000000;
   border-radius: 0.5rem;
+  padding-left: 0.3rem;
+  background-color: #fff;
+}
+
+.msg-receive-wrapper {
+  background-color: #fff;
 }

@@ -5,10 +5,10 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { MainPage } from "./pages/MainPage";
 import { Login } from "./pages/Login";
-import { useSelector } from "react-redux";
+import { MainPage } from "./pages/MainPage";
 import { RootState } from "./redux/store";
+import { useSelector } from "react-redux";
 
 const App = () => {
   const user = useSelector((user: RootState) => user.user.username);

@@ -1,7 +1,8 @@
 input {
-  height: 2.4rem;
   width: inherit;
   padding: 1rem;
   color: #000000;
   background-color: #fcfcfc;
+  border: 1px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
 }

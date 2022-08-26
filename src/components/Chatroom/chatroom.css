@@ -1,0 +1,44 @@
+.main-chatroom-cont {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  width: 30em;
+  border: 1px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px gray;
+}
+
+.rooms-msg-cont {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #a0a0a4;
+  width: 30em;
+  height: 35rem;
+  overflow-y: scroll;
+}
+
+.title-bar {
+  display: flex;
+  height: 1rem;
+  justify-content: space-between;
+  background-color: #000080;
+  width: 30em;
+}
+
+.title-bar > p {
+  font-size: 12px;
+  margin-left: 0.1rem;
+  color: #fff;
+  align-self: center;
+}
+
+.msg-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 5.1rem;
+  flex: 1;
+  background-color: #a0a0a4;
+  height: 100%;
+}

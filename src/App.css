@@ -1,11 +1,18 @@
-@import url("https://use.typekit.net/ics5byy.css");
+@font-face {
+  font-family: "w95";
+  src: url("./assets/fonts/w95fa.woff") format("woff");
+}
 
 body {
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  --font-main: lato, sans-serif;
+  display: block;
+  min-width: inherit;
+  --font-main: "w95", sans-serif;
   background-color: #008080;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: inherit;
 }
 
 *,
@@ -16,6 +23,7 @@ body {
   box-sizing: border-box;
   border: 0 none;
   outline: 0 none;
+  font-family: var(--font-main);
 }
 
 ul {
@@ -33,42 +41,19 @@ a {
   place-items: center;
 }
 
-.main-wrapper {
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  background-color: #a0a0a4;
-  width: 50vh;
-  height: 50vh;
-  overflow: auto;
+body *::-webkit-scrollbar {
+  width: 16px;
 }
 
-.rooms-wrapper {
-  align-self: flex-start;
-  justify-content: flex-start;
+body *::-webkit-scrollbar-thumb {
+  background: silver;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px gray;
+  border: 1px solid;
+  border-color: silver #000 #000 silver;
 }
 
-.msg-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding-left: 5.5rem;
-  flex: 1;
-  background-color: #a0a0a4;
-  height: 100%;
-}
-
-/* 16px @ 768px increasing to 24px @ 1920px */
-@media (min-width: 768px) {
-  :root {
-    font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
-
-    /* Safari resize fix */
-    min-height: 0vw;
-  }
-}
-/* Prevent scaling beyond this breakpoint */
-@media (min-width: 1920px) {
-  :root {
-    font-size: 24px;
-  }
+body *::-webkit-scrollbar-track {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTAuNSAyIDIiIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyI+CjxtZXRhZGF0YT5NYWRlIHdpdGggUGl4ZWxzIHRvIFN2ZyBodHRwczovL2NvZGVwZW4uaW8vc2hzaGF3L3Blbi9YYnh2Tmo8L21ldGFkYXRhPgo8cGF0aCBzdHJva2U9IiNjMGMwYzAiIGQ9Ik0wIDBoMU0xIDFoMSIgLz4KPC9zdmc+");
+  background-position: 0 0;
+  background-size: 2px;
 }

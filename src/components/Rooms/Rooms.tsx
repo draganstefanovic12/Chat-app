@@ -13,12 +13,11 @@ export const Rooms = () => {
 
   return (
     <div className="rooms-wrapper">
-      {chatrooms &&
-        chatrooms.map((chatroom: ChatRoom, i: number) => (
-          <Button key={i} onClick={() => dispatch(changeRoom(chatroom.name))}>
-            {chatroom.name}
-          </Button>
-        ))}
+      {chatrooms.map((chatroom: ChatRoom, i: number) => (
+        <Button key={i} onClick={() => dispatch(changeRoom(chatroom.name))}>
+          {chatroom.name}
+        </Button>
+      ))}
     </div>
   );
 };

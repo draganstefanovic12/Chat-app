@@ -1,17 +1,17 @@
-import { Rooms } from "../components/Rooms/Rooms";
-import { SendMessage } from "../components/SendMessage/SendMessage";
-import { ReceiveMessage } from "../components/ReceiveMessage/ReceiveMessage";
+import { Footer } from "../components/Footer/Footer";
+import { Chatroom } from "../components/Chatroom/ChatRoom";
+import { useState } from "react";
 
 export const MainPage = () => {
+  const [close, setClose] = useState<boolean>(false);
+  const [minimize, setMinimize] = useState<boolean>(false);
+
+  console.log(minimize);
+
   return (
-    <div className="main-wrapper">
-      <div className="rooms-wrapper">
-        <Rooms />
-      </div>
-      <div className="msg-wrapper">
-        <ReceiveMessage />
-        <SendMessage />
-      </div>
-    </div>
+    <>
+      {!close && <Chatroom setClose={setClose} setMinimize={setMinimize} />}
+      <Footer close={close} minimize={minimize} />
+    </>
   );
 };

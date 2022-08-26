@@ -30,16 +30,20 @@ export const SendMessage = () => {
   };
 
   return (
-    <div className="send-msg-wrapper">
-      <InputField
-        value={message}
-        onKeyDown={handleSubmit}
-        placeholder="Message..."
-        onChange={handleChange}
-      />
-      <Button type="submit" onClick={sendMessage}>
-        Send
-      </Button>
-    </div>
+    <>
+      {room && (
+        <div className="send-msg-wrapper">
+          <InputField
+            value={message}
+            onKeyDown={handleSubmit}
+            placeholder="Message..."
+            onChange={handleChange}
+          />
+          <Button type="submit" onClick={sendMessage}>
+            Send
+          </Button>
+        </div>
+      )}
+    </>
   );
 };

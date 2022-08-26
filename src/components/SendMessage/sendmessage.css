@@ -1,6 +1,5 @@
 .send-msg-wrapper {
   display: flex;
-  position: fixed;
-  bottom: 25vh;
-  width: 38vh;
+  height: 2.1rem;
+  width: 30em;
 }

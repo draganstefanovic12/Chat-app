@@ -1,8 +1,8 @@
 button {
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 500;
-  outline: 1px solid #000000;
+  outline: 0.1rem solid #000000;
   background: #c0c0c0;
   color: #000000;
   border: 1px solid;
@@ -10,6 +10,25 @@ button {
   cursor: pointer;
 }
 
+.footer-btn {
+  padding: 0rem;
+  margin-top: 0.1rem;
+}
+
+.small-icon-btn {
+  padding: 0rem;
+  width: 0.9rem;
+  margin: 0.1rem 0.1rem;
+  margin-left: 0;
+  font-size: 12px;
+  font-weight: 700;
+  height: 0.75rem;
+}
+
 button:active {
-  height: 90%;
+  outline: none;
+}
+
+.small-icon-btn:active {
+  border: none;
 }

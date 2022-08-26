@@ -1,7 +1,7 @@
 import "./button.css";
 
 type ButtonProps = {
-  children: string;
+  children: string | JSX.Element;
   onClick?: () => void;
   className?: string;
   disabled?: boolean;

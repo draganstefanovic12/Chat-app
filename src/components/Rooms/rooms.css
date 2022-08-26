@@ -3,7 +3,7 @@
   position: fixed;
   flex-direction: column;
   width: 5rem;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .rooms-wrapper > button {
