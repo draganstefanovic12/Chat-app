@@ -1,17 +1,25 @@
+import chatIcon from "../assets/images/chat.png";
 import { Footer } from "../components/Footer/Footer";
-import { Chatroom } from "../components/Chatroom/ChatRoom";
-import { useState } from "react";
+import { Chatroom } from "../components/Chatroom/Chatroom";
+import { DesktopIcon } from "../components/DesktopIcon/DesktopIcon";
+import { useAppDispatch, useAppSelector } from "../hooks/useRedux";
+import { useEffect } from "react";
+import { login } from "../redux/userReducer";
 
 export const MainPage = () => {
-  const [close, setClose] = useState<boolean>(false);
-  const [minimize, setMinimize] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const chatroomState = useAppSelector((state) => state.chatroomIcon);
 
-  console.log(minimize);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("ChatUser")!);
+    user && dispatch(login(user.user));
+  }, [dispatch]);
 
   return (
     <>
-      {!close && <Chatroom setClose={setClose} setMinimize={setMinimize} />}
-      <Footer close={close} minimize={minimize} />
+      <DesktopIcon icon={chatIcon} name="Chatroom" />
+      <Footer />
+      {!chatroomState.close && !chatroomState.minimize && <Chatroom />}
     </>
   );
 };

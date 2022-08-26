@@ -1,7 +1,8 @@
-import { login } from "../redux/userReducer";
-import { Button } from "../components/Button/Button";
-import { InputField } from "../components/InputField/InputField";
-import { useAppDispatch } from "../hooks/useRedux";
+import "./login.css";
+import { login } from "../../redux/userReducer";
+import { Button } from "../Button/Button";
+import { InputField } from "../InputField/InputField";
+import { useAppDispatch } from "../../hooks/useRedux";
 import { useEffect, useState } from "react";
 
 export const Login = () => {

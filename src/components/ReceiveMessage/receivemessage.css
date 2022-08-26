@@ -1,7 +1,7 @@
 .msg-receive {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: #000000;
   border-radius: 0.5rem;
   padding-left: 0.3rem;

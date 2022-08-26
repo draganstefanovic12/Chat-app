@@ -1,0 +1,14 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.login-wrapper > input {
+  height: 0.5rem;
+}
+
+.login-wrapper > button {
+  height: 1.2rem;
+  padding: 0;
+}

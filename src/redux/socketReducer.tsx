@@ -5,7 +5,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type RoomSocket = {
   socketIo: Socket<DefaultEventsMap, DefaultEventsMap>;
-  currentRoom: string;
+  currentRoom: string | null;
 };
 
 const socketIo = io("http://localhost:3000");
@@ -15,11 +15,9 @@ export const socketSlice = createSlice({
   name: "messages",
   initialState,
   reducers: {
-    changeRoom: (state, action: PayloadAction<string>) => {
-      if (state.currentRoom !== action.payload) {
-        socketIo.emit("change_room", action.payload);
-        state.currentRoom = action.payload;
-      }
+    changeRoom: (state, action: PayloadAction<string | null>) => {
+      socketIo.emit("change_room", action.payload);
+      state.currentRoom = action.payload;
     },
   },
 });

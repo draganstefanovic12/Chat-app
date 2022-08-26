@@ -3,19 +3,19 @@ import { Rooms } from "../Rooms/Rooms";
 import { Button } from "../Button/Button";
 import { SendMessage } from "../SendMessage/SendMessage";
 import { ReceiveMessage } from "../ReceiveMessage/ReceiveMessage";
+import { handleClose, handleMinimize } from "../../redux/chatroomIconReducer";
+import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 
-type ChatroomProps = {
-  setClose: React.Dispatch<React.SetStateAction<boolean>>;
-  setMinimize: React.Dispatch<React.SetStateAction<boolean>>;
-};
+export const Chatroom = () => {
+  const user = useAppSelector((state) => state.user.username);
+  const dispatch = useAppDispatch();
 
-export const Chatroom = ({ setClose, setMinimize }: ChatroomProps) => {
-  const handleMinimize = () => {
-    setMinimize(true);
+  const handleClickClose = () => {
+    dispatch(handleClose(true));
   };
 
-  const handleClose = () => {
-    setClose(true);
+  const handleClickMinimize = () => {
+    dispatch(handleMinimize(true));
   };
 
   return (
@@ -23,10 +23,10 @@ export const Chatroom = ({ setClose, setMinimize }: ChatroomProps) => {
       <div className="title-bar">
         <p>Chat</p>
         <div>
-          <Button onClick={handleMinimize} className="small-icon-btn">
+          <Button onClick={handleClickMinimize} className="small-icon-btn">
             _
           </Button>
-          <Button onClick={handleClose} className="small-icon-btn">
+          <Button onClick={handleClickClose} className="small-icon-btn">
             X
           </Button>
         </div>
