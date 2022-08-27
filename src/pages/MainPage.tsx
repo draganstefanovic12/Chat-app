@@ -2,10 +2,9 @@ import chatIcon from "../assets/images/chat.png";
 import { login } from "../redux/userReducer";
 import { Footer } from "../components/Footer/Footer";
 import { Chatroom } from "../components/Chatroom/Chatroom";
-import { useEffect } from "react";
 import { DesktopIcon } from "../components/DesktopIcon/DesktopIcon";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/useRedux";
-import { Login } from "../components/Login/Login";
 
 export const MainPage = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +14,7 @@ export const MainPage = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("ChatUser")!);
     user && dispatch(login(user.user));
-    //Sending out who logged in on page open
+    //Sending out user data after login
     socket.emit("user_name", user);
   }, [dispatch, socket]);
 
@@ -23,7 +22,6 @@ export const MainPage = () => {
     <>
       <DesktopIcon icon={chatIcon} name="Chatroom" />
       <Footer />
-      <Login />
       {!chatroomState.close && !chatroomState.minimize && <Chatroom />}
     </>
   );

@@ -9,8 +9,8 @@ export type IconState = {
 
 const initialState = {
   name: "Chatroom",
-  minimize: false,
-  close: false,
+  minimize: true,
+  close: true,
 } as IconState;
 
 export const chatroomIconSlice = createSlice({

@@ -1,14 +1,30 @@
 .login-wrapper {
   display: flex;
   flex-direction: column;
+  background-color: #a0a0a4;
+  width: 10rem;
   place-items: center;
+  padding: 1rem;
+}
+
+.small-bar,
+.login-wrapper {
+  margin-left: 50rem;
+  transform: translateY(-20rem);
 }
 
 .login-wrapper > input {
   height: 0.5rem;
+  width: 7.5rem;
+  padding: 0.5rem;
 }
 
 .login-wrapper > button {
-  height: 1.2rem;
+  height: 1rem;
+  margin-top: 0.5rem;
   padding: 0;
+}
+
+.small-bar {
+  width: 10rem;
 }

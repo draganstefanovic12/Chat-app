@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import "./activeusers.css";
 import { useAppSelector } from "../../hooks/useRedux";
+import { useEffect, useState } from "react";
 
 type User = {
   user: string;

@@ -52,3 +52,18 @@ body *::-webkit-scrollbar-track {
   background-position: 0 0;
   background-size: 2px;
 }
+
+.title-bar {
+  display: flex;
+  height: 1rem;
+  justify-content: space-between;
+  background-color: #000080;
+  width: 30em;
+}
+
+.title-bar > p {
+  font-size: 12px;
+  margin-left: 0.1rem;
+  color: #fff;
+  align-self: center;
+}

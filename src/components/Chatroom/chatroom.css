@@ -16,22 +16,7 @@
   background-color: #a0a0a4;
   width: 30em;
   height: 35rem;
-  overflow-y: scroll;
-}
-
-.title-bar {
-  display: flex;
-  height: 1rem;
-  justify-content: space-between;
-  background-color: #000080;
-  width: 30em;
-}
-
-.title-bar > p {
-  font-size: 12px;
-  margin-left: 0.1rem;
-  color: #fff;
-  align-self: center;
+  overflow-y: auto;
 }
 
 .msg-wrapper {

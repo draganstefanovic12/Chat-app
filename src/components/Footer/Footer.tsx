@@ -18,7 +18,7 @@ export const Footer = () => {
     <div className="footer-taskbar">
       <Button className="footer-btn">
         <div className="start-wrapper">
-          <img className="win-logo" src={winLogo} alt="" />
+          <img className="win-logo" src={winLogo} alt="win-logo" />
           <p>Start</p>
         </div>
       </Button>

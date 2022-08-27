@@ -8,7 +8,7 @@ type RoomSocket = {
   currentRoom: string | null;
 };
 
-const socketIo = io("http://localhost:3000");
+const socketIo = io("https://chatapp-backend-kyo.herokuapp.com");
 const initialState = { socketIo } as RoomSocket;
 
 export const socketSlice = createSlice({

@@ -3,3 +3,13 @@
   height: 2.1rem;
   width: 30em;
 }
+
+.send-msg-wrapper > input,
+.send-msg-wrapper > button {
+  border: 0.1px solid #a0a0a4;
+}
+
+.send-msg-wrapper > button {
+  border-left: none;
+  border-bottom: none;
+}

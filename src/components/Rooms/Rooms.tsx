@@ -10,8 +10,13 @@ export type ChatRoom = {
   name: string;
 };
 
-export const Rooms = () => {
+type RoomsProps = {
+  handleLogin: () => void;
+};
+
+export const Rooms = ({ handleLogin }: RoomsProps) => {
   const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.user.username);
   const room = useAppSelector((state) => state.socket.currentRoom);
 
   //In case chatroom is minimized and reopened it will fetch the last opened room
@@ -26,6 +31,11 @@ export const Rooms = () => {
           {chatroom.name}
         </Button>
       ))}
+      {!user && (
+        <Button className="log-in-btn" onClick={handleLogin}>
+          Log in
+        </Button>
+      )}
       <ActiveUsers />
     </div>
   );

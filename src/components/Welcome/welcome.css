@@ -1,0 +1,11 @@
+.welcome-cont > img {
+  width: 90%;
+}
+
+.welcome-cont {
+  display: flex;
+  padding-top: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  place-items: center;
+}

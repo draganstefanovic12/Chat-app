@@ -4,5 +4,4 @@ export const chatrooms = [
   { name: "Videogames" },
   { name: "Movies" },
   { name: "TV Shows" },
-  { name: "Life" },
 ];
