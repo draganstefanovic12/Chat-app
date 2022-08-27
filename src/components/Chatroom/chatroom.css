@@ -6,6 +6,7 @@
   border: 1px solid;
   border-color: #ffffff #808080 #808080 #ffffff;
   box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px gray;
+  margin-left: 10rem;
 }
 
 .rooms-msg-cont {

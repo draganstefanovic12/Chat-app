@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 export const ReceiveMessage = () => {
   const [currMsg, setCurrMsg] = useState<Message[]>([]);
   const socket = useAppSelector((socket) => socket.socket.socketIo);
-  console.log(currMsg);
 
   useEffect(() => {
     //Fetching room content on room change

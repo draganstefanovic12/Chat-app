@@ -3,11 +3,10 @@ import { Rooms } from "../Rooms/Rooms";
 import { Button } from "../Button/Button";
 import { SendMessage } from "../SendMessage/SendMessage";
 import { ReceiveMessage } from "../ReceiveMessage/ReceiveMessage";
+import { useAppDispatch } from "../../hooks/useRedux";
 import { handleClose, handleMinimize } from "../../redux/chatroomIconReducer";
-import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 
 export const Chatroom = () => {
-  const user = useAppSelector((state) => state.user.username);
   const dispatch = useAppDispatch();
 
   const handleClickClose = () => {

@@ -3,6 +3,7 @@ import { Button } from "../Button/Button";
 import { useEffect } from "react";
 import { chatrooms } from "../../assets/chatrooms";
 import { changeRoom } from "../../redux/socketReducer";
+import { ActiveUsers } from "../ActiveUsers/ActiveUsers";
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 
 export type ChatRoom = {
@@ -25,6 +26,7 @@ export const Rooms = () => {
           {chatroom.name}
         </Button>
       ))}
+      <ActiveUsers />
     </div>
   );
 };

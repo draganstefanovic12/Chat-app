@@ -9,7 +9,6 @@ export const SendMessage = () => {
   const user = useAppSelector((user) => user.user.username);
   const socket = useAppSelector((socket) => socket.socket.socketIo);
   const room = useAppSelector((socket) => socket.socket.currentRoom);
-  console.log(user);
 
   const sendMessage = () => {
     if (message.length > 0) {

@@ -2,18 +2,20 @@ import "./login.css";
 import { login } from "../../redux/userReducer";
 import { Button } from "../Button/Button";
 import { InputField } from "../InputField/InputField";
-import { useAppDispatch } from "../../hooks/useRedux";
 import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 
 export const Login = () => {
   const [username, setUsername] = useState<string | null>();
   const [error, setError] = useState<boolean>(false);
+  const socket = useAppSelector((socket) => socket.socket.socketIo);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("ChatUser")!);
     user && dispatch(login(user.user));
-  }, [dispatch]);
+    socket.emit("user_name", user);
+  }, [dispatch, socket]);
 
   const handleUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);

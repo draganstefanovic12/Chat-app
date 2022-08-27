@@ -12,7 +12,6 @@ export const Footer = () => {
     dispatch(handleMinimize(!chatroomState.minimize));
   };
 
-  //Ubaciti ovo kasnije <--
   const className = chatroomState.minimize ? "taskbar-btn" : "focused-btn";
 
   return (
