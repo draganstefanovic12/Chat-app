@@ -2,12 +2,12 @@ import "./chatroom.css";
 import { Rooms } from "../Rooms/Rooms";
 import { Login } from "../Login/Login";
 import { Button } from "../Button/Button";
+import { Welcome } from "../Welcome/Welcome";
 import { SendMessage } from "../SendMessage/SendMessage";
 import { ReceiveMessage } from "../ReceiveMessage/ReceiveMessage";
 import { useEffect, useState } from "react";
 import { handleClose, handleMinimize } from "../../redux/chatroomIconReducer";
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
-import { Welcome } from "../Welcome/Welcome";
 
 export const Chatroom = () => {
   const [close, setClose] = useState<boolean>(false);
