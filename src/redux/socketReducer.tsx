@@ -8,7 +8,10 @@ type RoomSocket = {
   currentRoom: string | null;
 };
 
-const socketIo = io("https://dragpersonalproj.xyz/chat-app");
+const socketIo = io("https://dragpersonalproj.xyz", {
+  path: "/chat-app/socket.io",
+});
+console.log(socketIo);
 const initialState = { socketIo } as RoomSocket;
 
 export const socketSlice = createSlice({
